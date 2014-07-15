@@ -1,0 +1,24 @@
+<html ng-app="store">
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+<script src="js/app.js"></script>
+</head>
+<body ng-controller="StoreController">
+<ul class="list-group">
+	<li class="list-group-item" ng-repeat="product in products | orderBy: '-price' ">
+		
+		<div class="panel">
+			<h4>Reviews</h4>
+			<blockquote ng-repeat="review in product.reviews">
+			
+				<b>Stars: {{ review.stars }}</b>
+				{{ review.body }}
+				<cite>{{ review.author }}</cite>
+			</blockquote>
+		</div>
+		
+	</li>
+</ul>
+</body>
+</html>

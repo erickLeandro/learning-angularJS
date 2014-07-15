@@ -1,0 +1,33 @@
+<html ng-app="store">
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+<script src="js/app.js"></script>
+</head>
+<body ng-controller="StoreController">
+		<form name="reviewForm">
+		
+			<blockquote>
+			
+				<b>Stars: {{ review.stars }}</b>
+				{{ review.body }}
+				<cite>{{ review.author }}</cite>
+			</blockquote>
+			
+			<select ng-model="review.stars">
+				<option value="1">1 Stars</option>
+				<option value="2">2 Stars</option>
+				<option value="3">3 Stars</option>
+				<option value="4">4 Stars</option>
+				<option value="5">5 Stars</option>
+			</select>
+			
+			<textarea ng-model="review.body"></textarea>
+			
+			<label>By: </label>
+			<input ng-model="review.author" type="text" />
+			<input type="submit">
+		</form>
+
+</body>
+</html>
